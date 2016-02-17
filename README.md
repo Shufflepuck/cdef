@@ -13,3 +13,5 @@ http -> com.apple.Safari
 berry:~/Downloads $ cdef -writedefaulturl http com.google.chrome
 berry:~/Downloads $ 
 ```
+
+See the list of UTIs here: https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html#//apple_ref/doc/uid/TP40009259-SW1
