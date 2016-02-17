@@ -45,5 +45,8 @@ http -> com.apple.Safari
 ```
 $ cdef -writedefaulturl http com.google.chrome
 ```
+Note: This will prompt a dialog to ask the user to confirm the change to Chrome.
+
+I use it in my deployments as a Casper policy that executes `/usr/bin/sudo -u#501 /usr/local/bin/cdef -writedefaulturl http com.google.chrome`
 
 See the list of UTIs here: https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html#//apple_ref/doc/uid/TP40009259-SW1
