@@ -9,6 +9,10 @@ It uses:
 - URL
 - UTI
 
+Download it from the [Releases page](https://github.com/ftiff/cdef/releases)
+
+Note: Please fork and Pull Request, or [create an issue](https://github.com/ftiff/cdef/issues)
+
 # What are UTI? (Uniform Type Identifiers)
 
 Uniform type identifiers (UTIs) provide a unified way to identify data handled within the system, such as documents, pasteboard data, and bundles. This chapter describes the concepts behind UTIs and shows how to specify them in your application bundles.
