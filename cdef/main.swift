@@ -73,6 +73,7 @@ func writeDefaultUti(arg1: String, arg2: String) -> Void {
 
 
 if argc <= 2 || argc > 4 {
+    print("Invalid number of parameters")
     printUsage()
     exit(EXIT_FAILURE)
 }
@@ -88,11 +89,22 @@ case "-readdefaulturl":
     readDefaultUrl(argv[2])
     break;
 case "-writedefaultuti":
+    if argc < 4 {
+        print("-writedefaultuti needs two parameters")
+        printUsage()
+        break;
+    }
     writeDefaultUti(argv[2], arg2: argv[3])
     break;
 case "-writedefaulturl":
+    if argc < 4 {
+        print("-writedefaulturl needs two parameters")
+        printUsage()
+        break;
+    }
     writeDefaultUrl(argv[2], arg2: argv[3])
     break;
 default:
+    print("Unknown parameter")
     printUsage()
 }
