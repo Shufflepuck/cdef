@@ -72,6 +72,7 @@
 				08AE54EC1C7469E2004C8B98 /* Sources */,
 				08AE54ED1C7469E2004C8B98 /* Frameworks */,
 				08AE54EE1C7469E2004C8B98 /* CopyFiles */,
+				089D36781CAEB9540040D280 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -113,6 +114,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		089D36781CAEB9540040D280 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "PACKAGE_NAME=`echo \"$PRODUCT_NAME\" | sed \"s/ /_/g\"`\nIDENTIFIER=\"io.fti.${PACKAGE_NAME}\"\nIDENTITY=\"3rd Party Mac Developer Installer: Francois TIFFREAU (EM3ER8T33A)\"\n\npkgbuild --root \"${DSTROOT}\" \\\n--identifier \"${IDENTIFIER}\" \\\n--version \"$APP_VERSION\" \\\n--install-location \"/\" \\\n--sign \"${IDENTITY}\" \\\n\"/tmp/${PACKAGE_NAME}-${APP_VERSION}.pkg\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08AE54EC1C7469E2004C8B98 /* Sources */ = {
@@ -162,7 +180,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -200,7 +218,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -209,6 +227,9 @@
 		08AE54F81C7469E2004C8B98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_VERSION = 0.2;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Francois TIFFREAU (EM3ER8T33A)";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +237,9 @@
 		08AE54F91C7469E2004C8B98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APP_VERSION = 0.2;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Francois TIFFREAU (EM3ER8T33A)";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -239,6 +263,7 @@
 				08AE54F91C7469E2004C8B98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
