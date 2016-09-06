@@ -8,10 +8,12 @@
 
 import Foundation
 
-let argv = [String](Process.arguments)
-let argc = Process.argc
+
+let argv = [String](CommandLine.arguments)
+let argc = CommandLine.argc
 
 func printUsage() -> Void {
+    print("cdef v0.2.1 -- https://github.com/ftiff/cdef")
     print("usage: \(argv[0]) [ -readalluti | -readdefaultuti | -readdefaulturl ] [parameter]")
     print("usage: \(argv[0]) [ -writedefaultuti | -writedefaulturl ] [parameter1] [parameter2]")
 }
@@ -27,32 +29,32 @@ func printArray(arg1: String, arg2: Array<String>) -> Void {
 }
 
 func readAllUti(argument: String) -> Void {
-    let resultUArray = LSCopyAllRoleHandlersForContentType(argument, LSRolesMask.All)
+    let resultUArray = LSCopyAllRoleHandlersForContentType(argument as CFString, LSRolesMask.all)
     if let resultArray = resultUArray?.takeUnretainedValue() {
-        printArray(argument, arg2: resultArray as [AnyObject] as! [String])
+        printArray(arg1: argument, arg2: resultArray as [AnyObject] as! [String])
     } else {
-        printString(argument, arg2: "Unknown")
+        printString(arg1: argument, arg2: "Unknown")
     }
 }
 
 func readDefaultUrl(argument: String) -> Void {
-    if let result = LSCopyDefaultHandlerForURLScheme(argument)?.takeRetainedValue() {
-        printString(argument, arg2: (result as String))
+    if let result = LSCopyDefaultHandlerForURLScheme(argument as CFString)?.takeRetainedValue() {
+        printString(arg1: argument, arg2: (result as String))
     } else {
-        printString(argument, arg2: "Unknown")
+        printString(arg1: argument, arg2: "Unknown")
     }
 }
 
 func readDefaultUti(argument: String) -> Void {
-    if let result = LSCopyDefaultRoleHandlerForContentType(argument, LSRolesMask.All)?.takeRetainedValue() {
-        printString(argument, arg2: (result as String))
+    if let result = LSCopyDefaultRoleHandlerForContentType(argument as CFString, LSRolesMask.all)?.takeRetainedValue() {
+        printString(arg1: argument, arg2: (result as String))
     } else {
-        printString(argument, arg2: "Unknown")
+        printString(arg1: argument, arg2: "Unknown")
     }
 }
 
 func writeDefaultUrl(arg1: String, arg2: String) -> Void {
-    let result = LSSetDefaultHandlerForURLScheme(arg1, arg2)
+    let result = LSSetDefaultHandlerForURLScheme(arg1 as CFString, arg2 as CFString)
     
     if result != 0 {
         print("Error: \(result)")
@@ -62,7 +64,7 @@ func writeDefaultUrl(arg1: String, arg2: String) -> Void {
 }
 
 func writeDefaultUti(arg1: String, arg2: String) -> Void {
-    let result = LSSetDefaultRoleHandlerForContentType(arg1, LSRolesMask.All, arg2)
+    let result = LSSetDefaultRoleHandlerForContentType(arg1 as CFString, LSRolesMask.all, arg2 as CFString)
     
     if result != 0 {
         print("Error: \(result)")
@@ -80,30 +82,30 @@ if argc <= 2 || argc > 4 {
 
 switch argv[1] {
 case "-readalluti":
-    readAllUti(argv[2])
-    break;
+    readAllUti(argument: argv[2])
+    break
 case "-readdefaultuti":
-    readDefaultUti(argv[2])
-    break;
+    readDefaultUti(argument: argv[2])
+    break
 case "-readdefaulturl":
-    readDefaultUrl(argv[2])
-    break;
+    readDefaultUrl(argument: argv[2])
+    break
 case "-writedefaultuti":
     if argc < 4 {
         print("-writedefaultuti needs two parameters")
         printUsage()
-        break;
+        break
     }
-    writeDefaultUti(argv[2], arg2: argv[3])
+    writeDefaultUti(arg1: argv[2], arg2: argv[3])
     break;
 case "-writedefaulturl":
     if argc < 4 {
         print("-writedefaulturl needs two parameters")
         printUsage()
-        break;
+        break
     }
-    writeDefaultUrl(argv[2], arg2: argv[3])
-    break;
+    writeDefaultUrl(arg1: argv[2], arg2: argv[3])
+    break
 default:
     print("Unknown parameter")
     printUsage()

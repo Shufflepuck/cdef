@@ -90,11 +90,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "François Levaux";
 				TargetAttributes = {
 					08AE54EF1C7469E2004C8B98 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = EM3ER8T33A;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -127,7 +129,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
-			shellScript = "PACKAGE_NAME=`echo \"$PRODUCT_NAME\" | sed \"s/ /_/g\"`\nIDENTIFIER=\"io.fti.${PACKAGE_NAME}\"\nIDENTITY=\"3rd Party Mac Developer Installer: Francois TIFFREAU (EM3ER8T33A)\"\n\npkgbuild --root \"${DSTROOT}\" \\\n--identifier \"${IDENTIFIER}\" \\\n--version \"$APP_VERSION\" \\\n--install-location \"/\" \\\n--sign \"${IDENTITY}\" \\\n\"/tmp/${PACKAGE_NAME}-${APP_VERSION}.pkg\"";
+			shellScript = "PACKAGE_NAME=`echo \"$PRODUCT_NAME\" | sed \"s/ /_/g\"`\nIDENTIFIER=\"io.fti.${PACKAGE_NAME}\"\nIDENTITY=\"Developer ID Installer: Francois TIFFREAU (EM3ER8T33A)\"\n\npkgbuild --root \"${DSTROOT}\" \\\n--identifier \"${IDENTIFIER}\" \\\n--version \"$APP_VERSION\" \\\n--install-location \"/\" \\\n--sign \"${IDENTITY}\" \\\n\"/tmp/${PACKAGE_NAME}-${APP_VERSION}.pkg\"";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -157,8 +159,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -201,8 +205,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -221,26 +227,31 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
 		08AE54F81C7469E2004C8B98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APP_VERSION = 0.2;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Francois TIFFREAU (EM3ER8T33A)";
+				APP_VERSION = 0.2.1;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = EM3ER8T33A;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		08AE54F91C7469E2004C8B98 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				APP_VERSION = 0.2;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Francois TIFFREAU (EM3ER8T33A)";
+				APP_VERSION = 0.2.1;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				DEVELOPMENT_TEAM = EM3ER8T33A;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
