@@ -7,13 +7,13 @@
 //
 
 import Foundation
-
+import FTApp
 
 let argv = [String](CommandLine.arguments)
 let argc = CommandLine.argc
 
 func printUsage() -> Void {
-    print("cdef v0.2.1 -- https://github.com/ftiff/cdef")
+    print("cdef v0.3.0 -- https://github.com/ftiff/cdef")
     print("usage: \(argv[0]) [ -readAllUti | -readDefaultUti | -readDefaultUrl ] [parameter]")
     print("usage: \(argv[0]) [ -writeDefaultUti | -writeDefaultUrl ] [parameter1] [parameter2]")
 }
@@ -28,29 +28,17 @@ func printArray(arg1: String, arg2: Array<String>) -> Void {
     
 }
 
-func readAllUti(argument: String) -> Void {
+func readAllUti(argument: String) -> [String]? {
     let resultUArray = LSCopyAllRoleHandlersForContentType(argument as CFString, LSRolesMask.all)
-    if let resultArray = resultUArray?.takeUnretainedValue() {
-        printArray(arg1: argument, arg2: resultArray as [AnyObject] as! [String])
-    } else {
-        printString(arg1: argument, arg2: "Unknown")
-    }
+    return resultUArray?.takeUnretainedValue() as! [String]?
 }
 
-func readDefaultUrl(argument: String) -> Void {
-    if let result = LSCopyDefaultHandlerForURLScheme(argument as CFString)?.takeRetainedValue() {
-        printString(arg1: argument, arg2: (result as String))
-    } else {
-        printString(arg1: argument, arg2: "Unknown")
-    }
+func readDefaultUrl(argument: String) -> String? {
+    return LSCopyDefaultHandlerForURLScheme(argument as CFString)?.takeRetainedValue() as? String
 }
 
-func readDefaultUti(argument: String) -> Void {
-    if let result = LSCopyDefaultRoleHandlerForContentType(argument as CFString, LSRolesMask.all)?.takeRetainedValue() {
-        printString(arg1: argument, arg2: (result as String))
-    } else {
-        printString(arg1: argument, arg2: "Unknown")
-    }
+func readDefaultUti(argument: String) -> String? {
+    return LSCopyDefaultRoleHandlerForContentType(argument as CFString, LSRolesMask.all)?.takeRetainedValue() as? String
 }
 
 func writeDefaultUrl(arg1: String, arg2: String) -> Void {
@@ -73,7 +61,6 @@ func writeDefaultUti(arg1: String, arg2: String) -> Void {
     exit(result)
 }
 
-
 if argc <= 2 || argc > 4 {
     print("Invalid number of parameters")
     printUsage()
@@ -84,17 +71,30 @@ switch argv[1] {
 case "-readalluti":
     fallthrough
 case "-readAllUti":
-    readAllUti(argument: argv[2])
+    if let resultArray = readAllUti(argument: argv[2]) {
+        printArray(arg1: argv[2], arg2: resultArray as [AnyObject] as! [String])
+    } else {
+        print("\(argv[2]) => Unknown")
+    }
     break
 case "-readdefaultuti":
     fallthrough
 case "-readDefaultUti":
-    readDefaultUti(argument: argv[2])
+    if let defaultUti = readDefaultUti(argument: argv[2]) {
+        print("\(argv[2]) => \(defaultUti)")
+    } else {
+        print("\(argv[2]) => Unknown")
+    }
     break
 case "-readdefaulturl":
     fallthrough
 case "-readDefaultUrl":
-    readDefaultUrl(argument: argv[2])
+    if let defaultUrl = readDefaultUrl(argument: argv[2]) {
+        print("\(argv[2]) => \(defaultUrl)")
+    } else {
+        print("\(argv[2]) => Unknown")
+    }
+    
     break
 case "-writedefaultuti":
     fallthrough

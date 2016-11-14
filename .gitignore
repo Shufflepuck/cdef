@@ -6,6 +6,9 @@
 build/
 DerivedData/
 
+# Swift Packages
+Packages/
+
 ## Various settings
 *.pbxuser
 !default.pbxuser
