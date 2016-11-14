@@ -14,8 +14,8 @@ let argc = CommandLine.argc
 
 func printUsage() -> Void {
     print("cdef v0.2.1 -- https://github.com/ftiff/cdef")
-    print("usage: \(argv[0]) [ -readalluti | -readdefaultuti | -readdefaulturl ] [parameter]")
-    print("usage: \(argv[0]) [ -writedefaultuti | -writedefaulturl ] [parameter1] [parameter2]")
+    print("usage: \(argv[0]) [ -readAllUti | -readDefaultUti | -readDefaultUrl ] [parameter]")
+    print("usage: \(argv[0]) [ -writeDefaultUti | -writeDefaultUrl ] [parameter1] [parameter2]")
 }
 
 func printString(arg1: String, arg2: String) -> Void {
@@ -82,25 +82,35 @@ if argc <= 2 || argc > 4 {
 
 switch argv[1] {
 case "-readalluti":
+    fallthrough
+case "-readAllUti":
     readAllUti(argument: argv[2])
     break
 case "-readdefaultuti":
+    fallthrough
+case "-readDefaultUti":
     readDefaultUti(argument: argv[2])
     break
 case "-readdefaulturl":
+    fallthrough
+case "-readDefaultUrl":
     readDefaultUrl(argument: argv[2])
     break
 case "-writedefaultuti":
+    fallthrough
+case "-writeDefaultUti":
     if argc < 4 {
-        print("-writedefaultuti needs two parameters")
+        print("-writeDefaultUti needs two parameters")
         printUsage()
         break
     }
     writeDefaultUti(arg1: argv[2], arg2: argv[3])
     break;
 case "-writedefaulturl":
+    fallthrough
+case "-writeDefaultUrl":
     if argc < 4 {
-        print("-writedefaulturl needs two parameters")
+        print("-writeDefaultUrl needs two parameters")
         printUsage()
         break
     }
@@ -109,4 +119,5 @@ case "-writedefaulturl":
 default:
     print("Unknown parameter")
     printUsage()
+    
 }
