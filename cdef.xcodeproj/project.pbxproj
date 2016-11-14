@@ -95,7 +95,6 @@
 				TargetAttributes = {
 					08AE54EF1C7469E2004C8B98 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = EM3ER8T33A;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -235,11 +234,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = 0.2.1;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				DEVELOPMENT_TEAM = EM3ER8T33A;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -247,11 +246,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APP_VERSION = 0.2.1;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				DEVELOPMENT_TEAM = EM3ER8T33A;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Release;
 		};
