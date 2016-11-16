@@ -14,6 +14,7 @@
 		089025021DDCB343005F9A9D /* cdef-main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089025011DDCB343005F9A9D /* cdef-main.swift */; };
 		089025091DDCB446005F9A9D /* FTApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* FTApp.framework */; };
 		0890250A1DDCB446005F9A9D /* FTApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* FTApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0890250F1DDCB7E6005F9A9D /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0890250E1DDCB7E6005F9A9D /* README.md */; };
 		OBJ_26 /* FTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* FTApp.swift */; };
 		OBJ_27 /* FTAppBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* FTAppBundle.swift */; };
 		OBJ_28 /* FTAppDocumentTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* FTAppDocumentTypes.swift */; };
@@ -62,6 +63,7 @@
 		089024F81DDCB321005F9A9D /* cdefTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cdefTests.swift; sourceTree = "<group>"; };
 		089024FA1DDCB321005F9A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		089025011DDCB343005F9A9D /* cdef-main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "cdef-main.swift"; sourceTree = "<group>"; };
+		0890250E1DDCB7E6005F9A9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		OBJ_10 /* FTAppBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTAppBundle.swift; sourceTree = "<group>"; };
 		OBJ_11 /* FTAppDocumentTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTAppDocumentTypes.swift; sourceTree = "<group>"; };
 		OBJ_12 /* FTApplicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTApplicationProtocol.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				089025011DDCB343005F9A9D /* cdef-main.swift */,
+				0890250E1DDCB7E6005F9A9D /* README.md */,
 				089024E81DDCB320005F9A9D /* AppDelegate.swift */,
 				089024EA1DDCB320005F9A9D /* Assets.xcassets */,
 				089024EC1DDCB320005F9A9D /* MainMenu.xib */,
@@ -299,6 +302,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0890250F1DDCB7E6005F9A9D /* README.md in Sources */,
 				089025021DDCB343005F9A9D /* cdef-main.swift in Sources */,
 				089024E91DDCB320005F9A9D /* AppDelegate.swift in Sources */,
 			);
