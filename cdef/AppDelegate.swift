@@ -27,6 +27,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         switch argv[1] {
+        case "-readDocumentTypes":
+            readDocumentTypesFromApp(applicationPath: argv[2])
+            break
+        case "-readURLTypes":
+            readURLTypesFromApp(applicationPath: argv[2])
+            break
         case "-readalluti":
             fallthrough
         case "-readAllUti":

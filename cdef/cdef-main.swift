@@ -11,6 +11,7 @@ import FTApp
 
 func printUsage() -> Void {
     print("cdef v0.3.0 -- https://github.com/ftiff/cdef")
+    print("usage: \(CommandLine.arguments[0]) [ -readDocumentTypes | -readURLTypes ] [application path]")
     print("usage: \(CommandLine.arguments[0]) [ -readAllUti | -readDefaultUti | -readDefaultUrl ] [parameter]")
     print("usage: \(CommandLine.arguments[0]) [ -writeDefaultUti | -writeDefaultUrl ] [parameter1] [parameter2]")
 }
@@ -58,4 +59,35 @@ func writeDefaultUti(arg1: String, arg2: String) -> Void {
     exit(result)
 }
 
+func readDocumentTypesFromApp(applicationPath: String) -> Void {
+    do {
+        let app = try FTApp(path: applicationPath)
+        for documentType in app.documentTypes {
+            if let documentType = documentType {
+                for contentType in documentType.contentTypes! {
+                    if let defaultApp = readDefaultUti(argument: contentType) {
+                        let isDefault = defaultApp == app.bundle.bundleIdentifier ? "√" : "x"
+                        print("\(isDefault) \(contentType) (\(documentType.typeRole!))")
+                    }
+                }
+            }
+        }
+    } catch {
+        NSLog("Cannot find application path: '\(applicationPath)'")
+    }
+}
 
+func readURLTypesFromApp(applicationPath: String) -> Void {
+    do {
+        let app = try FTApp(path: applicationPath)
+        for URLType in app.URLTypes {
+            if let URLType = URLType {
+                for URLScheme in URLType.URLSchemes! {
+                    print("\(URLScheme)")
+                }
+            }
+        }
+    } catch {
+        NSLog("Cannot find application path: '\(applicationPath)'")
+    }
+}
