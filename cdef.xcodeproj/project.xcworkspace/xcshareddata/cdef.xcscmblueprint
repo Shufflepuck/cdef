@@ -1,30 +1,30 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CE02A68C34570F4804F1309843E8C422F2980D2F",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3B7CA6118FB97A7ADBD4F5551D24FCC9E1566C95",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "CE02A68C34570F4804F1309843E8C422F2980D2F" : 9223372036854775807,
+    "3B7CA6118FB97A7ADBD4F5551D24FCC9E1566C95" : 9223372036854775807,
     "61D2282DE7D5947564DA516DC481CFA0CC9C9951" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "ED64554D-9A35-4FEA-A4E1-5A63E3FCF006",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "CE02A68C34570F4804F1309843E8C422F2980D2F" : "cdef\/",
-    "61D2282DE7D5947564DA516DC481CFA0CC9C9951" : "cdef\/Packages\/FTApp-0.2.0\/"
+    "3B7CA6118FB97A7ADBD4F5551D24FCC9E1566C95" : "cdef\/",
+    "61D2282DE7D5947564DA516DC481CFA0CC9C9951" : "cdef\/Packages\/FTApp-0.3.0\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "cdef",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "cdef.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ftiff\/cdef.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3B7CA6118FB97A7ADBD4F5551D24FCC9E1566C95"
+    },
+    {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ftiff\/FTApp",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "61D2282DE7D5947564DA516DC481CFA0CC9C9951"
-    },
-    {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ftiff\/cdef.git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CE02A68C34570F4804F1309843E8C422F2980D2F"
     }
   ]
 }

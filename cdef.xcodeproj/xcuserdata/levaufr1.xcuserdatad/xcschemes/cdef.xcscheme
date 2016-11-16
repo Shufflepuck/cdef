@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "OBJ_30"
-               BuildableName = "cdef"
+               BlueprintIdentifier = "089024E51DDCB320005F9A9D"
+               BuildableName = "cdef.app"
                BlueprintName = "cdef"
                ReferencedContainer = "container:cdef.xcodeproj">
             </BuildableReference>
@@ -28,12 +28,22 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "089024F31DDCB321005F9A9D"
+               BuildableName = "cdefTests.xctest"
+               BlueprintName = "cdefTests"
+               ReferencedContainer = "container:cdef.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_30"
-            BuildableName = "cdef"
+            BlueprintIdentifier = "089024E51DDCB320005F9A9D"
+            BuildableName = "cdef.app"
             BlueprintName = "cdef"
             ReferencedContainer = "container:cdef.xcodeproj">
          </BuildableReference>
@@ -55,8 +65,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_30"
-            BuildableName = "cdef"
+            BlueprintIdentifier = "089024E51DDCB320005F9A9D"
+            BuildableName = "cdef.app"
             BlueprintName = "cdef"
             ReferencedContainer = "container:cdef.xcodeproj">
          </BuildableReference>
@@ -74,8 +84,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "OBJ_30"
-            BuildableName = "cdef"
+            BlueprintIdentifier = "089024E51DDCB320005F9A9D"
+            BuildableName = "cdef.app"
             BlueprintName = "cdef"
             ReferencedContainer = "container:cdef.xcodeproj">
          </BuildableReference>

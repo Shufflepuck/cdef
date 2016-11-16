@@ -5,8 +5,6 @@
 ## Build generated
 build/
 DerivedData/
-
-# Swift Packages
 Packages/
 
 ## Various settings
@@ -67,3 +65,4 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 
+.DS_Store
