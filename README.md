@@ -49,6 +49,34 @@ http -> com.apple.Safari
 ```
 $ cdef -writedefaulturl http com.google.chrome
 ```
+
+###Get supported URL types for Apple Mail:
+```
+$ cdef -readURLTypes /Applications/Mail.app/
+mailto
+message
+```
+
+###Get supported Document types for Apple Mail:
+```
+√        -> Application is default for this type
+x        -> Application supports but is not default for this type
+
+(Viewer) -> Application can open these files in read-only
+(Editor) -> Application can modify these files
+(None)   -> Application does not support this files
+```
+```
+$ cdef -readDocumentTypes /Applications/Mail.app/
+√ com.apple.mail.email (Viewer)
+√ com.apple.mail.emlx (Viewer)
+x com.apple.mail.emlx.part (None)
+√ com.apple.mail.mbox (Editor)
+√ com.apple.mail.imapmbox (Editor)
+√ com.apple.mail.ewsmbox (Editor)
+√ com.apple.mail.stationery (Editor)
+```
+
 Note: This will prompt a dialog to ask the user to confirm the change to Chrome.
 
 I use it in my deployments as a Casper policy that executes `/usr/bin/sudo -u#501 /usr/local/bin/cdef -writedefaulturl http com.google.chrome`
