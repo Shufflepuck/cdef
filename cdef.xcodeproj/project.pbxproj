@@ -147,7 +147,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -157,7 +157,6 @@
 				089024F71DDCB321005F9A9D /* cdefTests */,
 				OBJ_18 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -266,7 +265,7 @@
 				en,
 				Base,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_18 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -647,6 +646,7 @@
 				089024FD1DDCB321005F9A9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		089024FE1DDCB321005F9A9D /* Build configuration list for PBXNativeTarget "cdefTests" */ = {
 			isa = XCConfigurationList;
@@ -655,6 +655,7 @@
 				089025001DDCB321005F9A9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 		OBJ_2 /* Build configuration list for PBXProject "cdef" */ = {
 			isa = XCConfigurationList;

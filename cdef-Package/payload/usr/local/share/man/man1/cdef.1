@@ -1,0 +1,83 @@
+.\" 
+.\" cdef manual page.
+.\" (C) 2016 Francois 'ftiff' Levaux-Tiffreau
+.\"  
+.\" Author:
+.\"   Application - Francois 'ftiff' Levaux-Tiffreau (fti@me.com)
+.\"   Man Page - Richard Purves (richard@richard-purves.com)
+.\"
+.de Sp \" Vertical space (when we can't use .PP)
+.if t .sp .5v
+.if n .sp
+..
+.TH cdef "v0.3.0"
+.SH NAME
+cdef \- A command-line tool to select default applications for document types and URL schemes on Mac OS X.
+.SH SYNOPSIS
+.PP
+.B cdef [ -readDocumentTypes | -readURLTypes ] [application path]
+.br
+.B cdef [ -readAllUti | -readDefaultUti | -readDefaultUrl ] [parameter]
+.br
+.B cdef [ -writeDefaultUti | -writeDefaultUrl ] [parameter1] [parameter2]
+.SH DESCRIPTION
+\fIcdef\fP - A command-line tool to select default applications for document types and URL schemes on Mac OS X.
+.PP
+\fIcdef\fP is a utility to set default application behaviour on Mac OS X, using
+Uniform Resource Locators (URL) or Apple's Uniform Type Identifiers. A \fIUTI\fP
+is a unique string describing the format of a file's content, so with cdef,
+a user or administrator can change which application acts as the default for the specified URL or UTI.
+.SH RUNTIME OPTIONS
+The following options are available:
+.TP
+\fB-readAllUti\fR [UTI]
+Shows all applications that can open the specified UTI.
+.IP
+\fIExample\fP: cdef -readAllUti public.png
+.TP
+\fB-readDefaultUti\fR [UTI]
+Shows the default application that opens the specified UTI.
+.IP
+\fIExample\fP: cdef -readDefaultUti public.png
+.TP
+\fB-readDefaultUrl\fR [URL]
+Shows the default application that can open a URL type.
+.IP
+\fIExample\fP: cdef -readDefaultUrl http
+.TP
+\fB-writeDefaultUti\fR [UTI] [BUNDLE_ID]
+Changes the default application for a given UTI.
+.IP
+\fIExample\fP: cdef -writeDefaultUti public.png com.pixelmatorteam.pixelmator
+.TP
+\fB-writeDefaultUrl\fR [URL] [BUNDLE_ID]
+Changes the default application for opening an URL (scheme://).
+.IP
+\fIExample\fP: cdef -writeDefaultUrl http com.google.chrome
+.TP
+\fB-readDocumentTypes\fR [UTI] [Application]
+Read the Document Types associated with Application.
+.IP
+v -> Application is default for this type
+.br
+x -> Application supports but is not default for this type
+.IP
+(Viewer) -> Application can open these files in read-only
+.br
+(Editor) -> Application can modify these files
+.br
+(None)   -> Application does not support this files
+.IP
+\fIExample\fP: cdef -readDocumentTypes /Applications/Mail.app/
+.TP
+\fB-readURLTypes\fR [URL] [Application]
+Read the current supported URL schemes (scheme://).
+.IP
+\fIExample\fP: cdef -readURLTypes /Applications/Mail.app/
+.SH AUTHOR
+Francois 'ftiff' Levaux-Tiffreau <fti@me.com>
+.SH WEB SITE
+https://github.com/ftiff/cdef
+.SH SEE ALSO
+.PP
+https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html#//apple_ref/doc/uid/TP40009259-SW1

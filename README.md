@@ -2,10 +2,12 @@
 `cdef` is a handy command-line tool to mess with your default applications.
 
 I currently use it to:
+
 - Change default browser to Chrome
 - Change .xml handling from Xcode to TextMate
 
 It uses: 
+
 - URL
 - UTI
 
@@ -82,3 +84,12 @@ Note: This will prompt a dialog to ask the user to confirm the change to Chrome.
 I use it in my deployments as a Casper policy that executes `/usr/bin/sudo -u#501 /usr/local/bin/cdef -writedefaulturl http com.google.chrome`
 
 See the list of UTIs here: https://developer.apple.com/library/ios/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html#//apple_ref/doc/uid/TP40009259-SW1
+
+# Developers
+You're more than welcome to contribute to the code!
+
+Everything needed to create a package is under cdef-Package/. Just run cdef-Package/build_pkg.sh !
+
+You will need to change the Team ID & Certificate.
+
+But... please PR so we can keep only one repository.
