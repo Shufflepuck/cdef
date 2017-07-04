@@ -8,9 +8,13 @@
 
 import Foundation
 
+func printVersion() -> Void {
+    print("0.4.0")
+}
 
 func printUsage() -> Void {
-    print("cdef v0.3.0 -- https://github.com/ftiff/cdef")
+    print("cdef v0.4.0 -- https://github.com/ftiff/cdef")
+    print("usage: \(appName) -v: print version")
     print("usage: \(appName) [ -readDocumentTypes | -readURLTypes ] [application path]")
     print("usage: \(appName) [ -readAllUti | -readDefaultUti | -readDefaultUrl ] [parameter]")
     print("usage: \(appName) [ -writeDefaultUti | -writeDefaultUrl ] [parameter1] [parameter2]")
