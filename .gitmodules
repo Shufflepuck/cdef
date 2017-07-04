@@ -1,0 +1,3 @@
+[submodule "FTApp"]
+	path = FTApp
+	url = https://github.com/ftiff/FTApp

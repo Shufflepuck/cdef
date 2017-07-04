@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import FTApp
+
 
 func printUsage() -> Void {
     print("cdef v0.3.0 -- https://github.com/ftiff/cdef")
-    print("usage: \(CommandLine.arguments[0]) [ -readDocumentTypes | -readURLTypes ] [application path]")
-    print("usage: \(CommandLine.arguments[0]) [ -readAllUti | -readDefaultUti | -readDefaultUrl ] [parameter]")
-    print("usage: \(CommandLine.arguments[0]) [ -writeDefaultUti | -writeDefaultUrl ] [parameter1] [parameter2]")
+    print("usage: \(appName) [ -readDocumentTypes | -readURLTypes ] [application path]")
+    print("usage: \(appName) [ -readAllUti | -readDefaultUti | -readDefaultUrl ] [parameter]")
+    print("usage: \(appName) [ -writeDefaultUti | -writeDefaultUrl ] [parameter1] [parameter2]")
 }
 
 func printString(arg1: String, arg2: String) -> Void {
@@ -32,11 +32,11 @@ func readAllUti(argument: String) -> [String]? {
 }
 
 func readDefaultUrl(argument: String) -> String? {
-    return LSCopyDefaultHandlerForURLScheme(argument as CFString)?.takeRetainedValue() as? String
+    return LSCopyDefaultHandlerForURLScheme(argument as CFString)?.takeRetainedValue() as String?
 }
 
 func readDefaultUti(argument: String) -> String? {
-    return LSCopyDefaultRoleHandlerForContentType(argument as CFString, LSRolesMask.all)?.takeRetainedValue() as? String
+    return LSCopyDefaultRoleHandlerForContentType(argument as CFString, LSRolesMask.all)?.takeRetainedValue() as String?
 }
 
 func writeDefaultUrl(arg1: String, arg2: String) -> Void {
