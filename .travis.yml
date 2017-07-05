@@ -1,0 +1,28 @@
+language: objective-c
+osx_image: xcode9
+xcode_project: cdef.xcodeproj
+xcode_scheme: cdef
+xcode_sdk: macosx10.13
+
+# https://docs.travis-ci.com/user/multi-os/
+matrix:
+include:
+- xcode_sdk: macosx10.13
+- xcode_sdk: macosx10.12
+- xcode_sdk: macosx10.11
+
+# http://stackoverflow.com/questions/34231587/xcode-ui-testing-on-travis-for-osx-with-xcode-helper-accessibility
+# Not compatible with 10.12
+# Instead, disable the UI tests http://cleanswifter.com/disable-tests-xcode/
+#install:
+#- sudo sqlite3 "/Library/Application Support/com.apple.TCC/TCC.db" "INSERT INTO access VALUES ('kTCCServiceAccessibility','com.apple.dt.Xcode-Helper',0,1,1,NULL,NULL);"
+
+# https://sipb.mit.edu/doc/safe-shell/
+
+script:
+- set -o pipefail
+- xcodebuild build test -project cdef.xcodeproj -scheme cdef CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+
