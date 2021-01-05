@@ -67,4 +67,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Richard Purves
 
 
-
+[0.4.0]: https://github.com/Shufflepuck/cdef/compare/v2.3.0...v2.4.0
+[0.3.0]: https://github.com/Shufflepuck/cdef/compare/v0.2.1...v2.3.0
+[0.2.1]: https://github.com/Shufflepuck/cdef/compare/v0.2...v0.2.1
